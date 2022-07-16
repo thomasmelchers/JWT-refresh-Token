@@ -4,6 +4,7 @@ import cors from "cors";
 import routes from "./routes";
 import deserializeUser from "./middleware/deserializeUser";
 import { connect } from './utils/connection';
+import config from 'config';
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(
 );
 
 const main = async() => {
-  app.listen(4000, () => {
+  app.listen(config.get('PORT'), () => {
     console.log(`Server listening at http://localhost:4000`);
   });
 
