@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@types/pino": "^7.0.5",
-    "mongoose": "^6.4.4",
-    "pino": "^8.1.0",
-    "pino-pretty": "^8.1.0"
-  }
-}

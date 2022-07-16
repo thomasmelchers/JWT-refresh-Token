@@ -15,12 +15,12 @@ app.use(express.urlencoded({ extended: false }));
 // be called on every request
 app.use(deserializeUser);
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:3000",
+//   })
+// );
 
 const main = async() => {
   app.listen(config.get('PORT'), () => {
