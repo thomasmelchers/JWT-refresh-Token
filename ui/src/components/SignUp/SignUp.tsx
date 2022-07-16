@@ -1,17 +1,15 @@
-import React, {useState, ChangeEvent} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios';
 
 const SignUp = () => {
 
-  const [result, setResult] = useState<boolean>()
+
   const [loginData, setLoginData] = useState<object | string>();
-  const [invalid, setInvalid] = useState()
+
 
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
-    
-    let isSignUp: boolean ; 
     const target = e.target as typeof e.target & {
       email: { value: string };
       password: { value: string };
