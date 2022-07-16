@@ -1,0 +1,12 @@
+.container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.accordionTitle {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white
+}

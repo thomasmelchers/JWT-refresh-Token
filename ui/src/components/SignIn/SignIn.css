@@ -1,0 +1,49 @@
+.App {
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .wrapper {
+    background-color: lightblue;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .wrapper form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrapper .data {
+    background-color: #ccc;
+    padding: 1rem;
+  }
+  
+  button {
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    background-color: orangered;
+
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  label{
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  input{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  /* h2{
+    margin-b: 0;
+  } */
+
+  
