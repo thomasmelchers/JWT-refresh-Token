@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 // be called on every request
 app.use(deserializeUser);
 
-app.get('/', (req, res) => { res.send('hello world');})
+app.get('/', (req, res) => { res.send('hello world!');})
 // app.use(
 //   cors({
 //     credentials: true,
