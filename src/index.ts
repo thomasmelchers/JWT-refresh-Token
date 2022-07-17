@@ -10,12 +10,7 @@ import path from 'path';
 
 const app = express();
 
-app.use(cors({
-  //origin: "http://localhost:3000",
-  origin: "https://thomas-melchers-refreshtoken.netlify.app",
-  credentials: true,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-}));
+app.set("trust proxy", 1);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -25,6 +20,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(deserializeUser);
 
 // app.get('/', (req, res) => { res.send('hello world!');})
+
+
+app.use(cors({
+  //origin: "http://localhost:3000",
+  origin: "https://thomas-melchers-refreshtoken.netlify.app",
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+}));
 
 // const node_env = config.get<string>("NODE_ENV");
 // if(node_env === "production"){
