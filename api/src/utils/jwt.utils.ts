@@ -1,12 +1,12 @@
 import jwt from 'jsonwebtoken';
 import config from 'config';
 
-const privateKey = config.get<string>('privateKey');
-const publicKey = config.get<string>('publicKey');
-
+const privateKey: string = config.get<string>('privateKey');
+const publicKey: string = process.env.PUBLICKEY!;
 
 // sign jwt
 export const signJWT = (payload: object, expiresIn: string | number) => {
+    console.log(privateKey);
     return jwt.sign(payload, privateKey, { algorithm: 'RS256', expiresIn })
 }
 // verify jwt

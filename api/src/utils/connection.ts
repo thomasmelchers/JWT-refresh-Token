@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 import config from 'config';
 import logger from './logger'
 
+
 export const connect = async () => {
-    const databaseUrl = config.get<string>('dbURL');
+    const databaseUrl  = process.env.DATABASEURL!;
 
     try {
         await mongoose.connect(databaseUrl);

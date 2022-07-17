@@ -6,8 +6,8 @@ import cookieParser from 'cookie-parser';
 import { getUser } from '../services/user.services';
 import { UserModelInterface } from '../models/user.models';
 
-const expireAccessToken = config.get<string>('expireAccessToken');
-const expireVerifyToken = config.get<string>('expireVerifyToken');
+const expireAccessToken: string = process.env.EXPIREACCESSTOKEN!;
+const expireVerifyToken: string = process.env.EXPIREVERIFYTOKEN!;
 
 
 // LOGIN HANDLER
