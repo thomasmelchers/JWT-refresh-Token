@@ -26,7 +26,7 @@ app.use(
   })
 );
 
-const node_env = process.env.NODE_ENV!
+const node_env = config.get<string>("NODE_ENV");
 if(node_env === "production"){
   app.use(express.static(path.join(__dirname, '../ui/build')))
 
@@ -47,6 +47,11 @@ const main = async() => {
   await connect();
   routes(app);
   console.log(node_env)
+  console.log('accessToken:', config.get<string>('expireAccessToken'))
+  console.log('verifyToken:', config.get<string>('expireVerifyToken'))
+  console.log('publicKey:', config.get<string>('publicKey'))
+  console.log('privateKey:', config.get<string>('privateKey'))
+  console.log('salt:', config.get<number>('saltWorkFactor'))
 }
 
 main();

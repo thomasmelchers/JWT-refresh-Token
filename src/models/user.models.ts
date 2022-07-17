@@ -42,7 +42,7 @@ UserSchema.pre("save", async function (next) {
 
     // IF THE PASSWORD HAS NOT BEEN MODIFIED : need to be salted and then hashed
     // Definition of the salting rounds => round are defined in the config file
-    const saltFactor: number = Number(process.env.SALTWORKFACTOR!);
+    const saltFactor: number = config.get<number>('saltWorkFactor');
     const salt = await bcrypt.genSalt(saltFactor);
 
     // Hashing the password

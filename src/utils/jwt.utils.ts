@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import config from 'config';
 
 const privateKey: string = config.get<string>('privateKey');
-const publicKey: string = process.env.PUBLICKEY!;
+const publicKey: string = config.get<string>('publicKey');
 
 // sign jwt
 export const signJWT = (payload: object, expiresIn: string | number) => {

@@ -4,7 +4,7 @@ import logger from './logger'
 
 
 export const connect = async () => {
-    const databaseUrl  = process.env.DATABASEURL!;
+    const databaseUrl  = config.get<string>('dbURL');
 
     try {
         await mongoose.connect(databaseUrl);

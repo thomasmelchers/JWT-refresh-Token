@@ -1,5 +1,4 @@
 .env
-config
 
 public.pem
 private.pem
