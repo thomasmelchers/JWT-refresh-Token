@@ -26,18 +26,18 @@ app.use(
   })
 );
 
-const node_env = config.get<string>("NODE_ENV");
-if(node_env === "production"){
-  app.use(express.static(path.join(__dirname, '../ui/build')))
+// const node_env = config.get<string>("NODE_ENV");
+// if(node_env === "production"){
+//   app.use(express.static(path.join(__dirname, '../ui/build')))
 
-  app.get('*', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, '../ui', 'build', 'index.html'));
-  })  
-} else {
-  app.get('/', (req: Request, res: Response) => { 
-    res.send('Api is running');
-  })
-}
+//   app.get('*', (req: Request, res: Response) => {
+//     res.sendFile(path.join(__dirname, '../ui', 'build', 'index.html'));
+//   })  
+// } else {
+//   app.get('/', (req: Request, res: Response) => { 
+//     res.send('Api is running');
+//   })
+// }
 
 const main = async() => {
   const port = process.env.PORT || 4000;
@@ -47,7 +47,7 @@ const main = async() => {
 
   await connect();
   routes(app);
-  console.log(node_env)
+  //console.log(node_env)
   console.log('accessToken:', config.get<string>('expireAccessToken'))
   console.log('verifyToken:', config.get<string>('expireVerifyToken'))
   console.log('publicKey:', config.get<string>('publicKey'))
