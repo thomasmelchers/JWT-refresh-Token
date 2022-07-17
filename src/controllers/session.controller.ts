@@ -37,12 +37,14 @@ export const createSessionHandler = async(req: Request, res: Response) => {
     res.cookie('accessToken', accessToken, {
         maxAge: 300000, // 5 minutes
         httpOnly: true,
-        secure: true // only works if https ! not working on localhost
+        secure: true, // only works if https ! not working on localhost
+        sameSite: 'none'
     });
     res.cookie('refreshToken', refreshToken, {
         maxAge: 3.154e10, // 1 year in millisecond
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: 'none'
     });
 
     // send user back
