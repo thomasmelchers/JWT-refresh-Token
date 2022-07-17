@@ -25,7 +25,7 @@ export const createSessionHandler = async(req: Request, res: Response) => {
 
     // create access token
     const accessToken = signJWT({ email: user.email, name: user.name, sessionId: session.sessionId}, expireAccessToken);
-    console.log('accessToken:', accessToken);
+    console.log(expireAccessToken);
     const refreshToken = signJWT({ sessionId: session.sessionId}, expireVerifyToken);
     console.log('refreshToken:', refreshToken)
 
