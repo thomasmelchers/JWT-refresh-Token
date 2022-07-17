@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios';
 
 const SignUp = () => {
-
+  const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
 
   const [loginData, setLoginData] = useState<object | string>();
 
@@ -22,7 +22,7 @@ const SignUp = () => {
 
     axios
       .post(
-        `http://localhost:4000/api/signup`,
+        `${url}/api/signup`,
         { email, password, name },
         {
           withCredentials: true,

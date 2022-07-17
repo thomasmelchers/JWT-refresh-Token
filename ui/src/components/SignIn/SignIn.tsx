@@ -7,6 +7,8 @@ function SignUp() {
   const [sessionData, setSessionData] = useState();
   const [logoutData, setLogoutData] = useState();
 
+  const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
+
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
@@ -19,7 +21,7 @@ function SignUp() {
 
     axios
       .post(
-        `http://localhost:4000/api/session`,
+        `${url}/api/session`,
         { email, password },
         {
           withCredentials: true,
@@ -32,7 +34,7 @@ function SignUp() {
 
   async function getSessionData() {
     axios
-      .get(`http://localhost:4000/api/session`, {
+      .get(`${url}/api/session`, {
         withCredentials: true,
       })
       .then((res) => setSessionData(res.data))
@@ -41,7 +43,7 @@ function SignUp() {
 
   async function logout() {
     axios
-      .delete(`http://localhost:4000/api/session`, {
+      .delete(`${url}/api/session`, {
         withCredentials: true,
       })
       .then((res) => setLogoutData(res.data))
