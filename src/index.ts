@@ -21,10 +21,9 @@ app.use(deserializeUser);
 
 // app.get('/', (req, res) => { res.send('hello world!');})
 
-
 app.use(cors({
   //origin: "http://localhost:3000",
-  origin: "https://thomas-melchers-refreshtoken.netlify.app",
+  origin: (config.get<string>('NODE_ENV')  === 'production')? "https://thomas-melchers-refreshtoken.netlify.app" : 'http://localhost:3000',
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }));
@@ -50,6 +49,7 @@ const main = async() => {
 
   await connect();
   routes(app);
+  console.log(config.get<string>('NODE_ENV'))
   
 }
 
