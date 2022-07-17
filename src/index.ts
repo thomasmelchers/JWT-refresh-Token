@@ -19,12 +19,13 @@ app.use(express.urlencoded({ extended: false }));
 // be called on every request
 app.use(deserializeUser);
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
-);
+app.get('/', (req, res) => { res.send('hello world');})
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:3000",
+//   })
+// );
 
 // const node_env = config.get<string>("NODE_ENV");
 // if(node_env === "production"){
