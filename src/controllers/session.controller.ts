@@ -6,11 +6,11 @@ import cookieParser from 'cookie-parser';
 import { getUser } from '../services/user.services';
 import { UserModelInterface } from '../models/user.models';
 
-const expireAccessToken: string = '5s';
-const expireVerifyToken: string = '1y';
+// const expireAccessToken: string = '5s';
+// const expireVerifyToken: string = '1y';
 
-// const expireAccessToken: string = config.get<string>('expireAccessToken');
-// const expireVerifyToken: string = config.get<string>('expireVerifyToken');
+const expireAccessToken: string = config.get<string>('expireAccessToken');
+const expireVerifyToken: string = config.get<string>('expireVerifyToken');
 
 
 // LOGIN HANDLER
