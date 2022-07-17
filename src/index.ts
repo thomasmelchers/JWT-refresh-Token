@@ -20,16 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(deserializeUser);
 
 // app.get('/', (req, res) => { res.send('hello world!');})
-const corsOptions = {
-  origin: "thomas-melchers-refreshtoken.netlify.app",
-  credentials: true,
-  'allowedHeaders': ['sessionId', 'Content-Type'],
-  'exposedHeaders': ['sessionId'],
-  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  'preflightContinue': false
-}
 
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: "http://thomas-melchers-refreshtoken.netlify.app",
+  credentials: true,
+}));
 
 // const node_env = config.get<string>("NODE_ENV");
 // if(node_env === "production"){
@@ -52,12 +48,7 @@ const main = async() => {
 
   await connect();
   routes(app);
-  //console.log(node_env)
-  console.log('accessToken:', config.get<string>('expireAccessToken'))
-  console.log('verifyToken:', config.get<string>('expireVerifyToken'))
-  console.log('publicKey:', config.get<string>('publicKey'))
-  console.log('privateKey:', config.get<string>('privateKey'))
-  console.log('salt:', config.get<number>('saltWorkFactor'))
+  
 }
 
 main();
