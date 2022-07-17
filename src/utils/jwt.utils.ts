@@ -6,7 +6,6 @@ const publicKey: string = process.env.PUBLICKEY!;
 
 // sign jwt
 export const signJWT = (payload: object, expiresIn: string | number) => {
-    console.log(privateKey);
     return jwt.sign(payload, privateKey, { algorithm: 'RS256', expiresIn })
 }
 // verify jwt
