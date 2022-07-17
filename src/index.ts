@@ -20,12 +20,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(deserializeUser);
 
 // app.get('/', (req, res) => { res.send('hello world!');})
-app.use(
-  cors({
-    credentials: true,
-    origin: "thomas-melchers-refreshtoken.netlify.app",
-  })
-);
+const corsOptions = {
+  origin: "thomas-melchers-refreshtoken.netlify.app",
+  credentials: true,
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'exposedHeaders': ['sessionId'],
+  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'preflightContinue': false
+}
+
+app.use(cors(corsOptions));
 
 // const node_env = config.get<string>("NODE_ENV");
 // if(node_env === "production"){
