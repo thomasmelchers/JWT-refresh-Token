@@ -25,7 +25,9 @@ export const createSessionHandler = async(req: Request, res: Response) => {
 
     // create access token
     const accessToken = signJWT({ email: user.email, name: user.name, sessionId: session.sessionId}, expireAccessToken);
+    console.log('accessToken:', accessToken);
     const refreshToken = signJWT({ sessionId: session.sessionId}, expireVerifyToken);
+    console.log('refreshToken:', refreshToken)
 
     // set access token in cookie
 
