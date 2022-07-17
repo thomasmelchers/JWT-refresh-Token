@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "start": "node build/index.js",
-    "heroku-postbuild" : "tsc YARN_CONFIG_PRODUCTION=false yarn install --prefix ui && yarn build --prefix ui"
+    "postinstall": "tsc"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
