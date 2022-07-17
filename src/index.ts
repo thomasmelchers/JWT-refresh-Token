@@ -40,8 +40,9 @@ if(node_env === "production"){
 }
 
 const main = async() => {
-  app.listen(process.env.PORT || 4000, () => {
-    console.log(`Server listening at http://localhost:4000`);
+  const port = process.env.PORT || 4000;
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
   });
 
   await connect();
