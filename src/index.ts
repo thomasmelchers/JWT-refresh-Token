@@ -23,6 +23,7 @@ app.use(deserializeUser);
 
 
 app.use(cors({
+  // origin: "http://localhost:3000",
   origin: "https://thomas-melchers-refreshtoken.netlify.app",
   credentials: true,
 }));

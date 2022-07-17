@@ -8,8 +8,8 @@ import { IUser } from "../models/interfaces/user.interface";
 
 export const createUserHandler = async (req: Request, res: Response) => {
     try {
-
         const user = await createUser(req.body);
+        console.log(user)
         return res.status(201).send(user);
 
     } catch (err: any) {

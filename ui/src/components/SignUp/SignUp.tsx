@@ -2,7 +2,9 @@ import React, {useState} from 'react'
 import axios from 'axios';
 
 const SignUp = () => {
-  const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
+
+  const url: string = 'http://localhost:4000';
+  //const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
 
   const [loginData, setLoginData] = useState<object | string>();
 

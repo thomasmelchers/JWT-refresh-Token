@@ -5,7 +5,9 @@ import { ICreateUser, IUser } from "../models/interfaces/user.interface";
 
 export const createUser = async (input: ICreateUser) : Promise<IUser> => {
     try {
+        console.log(input)
         const user = await UserModel.create(input);
+        console.log(user)
         return omit(user.toJSON(), "password");
 
     } catch (err: any) {

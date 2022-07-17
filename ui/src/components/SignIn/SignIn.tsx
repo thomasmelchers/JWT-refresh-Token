@@ -7,7 +7,8 @@ function SignUp() {
   const [sessionData, setSessionData] = useState();
   const [logoutData, setLogoutData] = useState();
 
-  const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
+  const url: string = 'http://localhost:4000';
+  //const url: string = 'https://jwt-refresh-tokens.herokuapp.com'
 
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
